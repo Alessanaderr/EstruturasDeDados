@@ -1,4 +1,4 @@
-public class Main {
+public class MainInvertida {
     public static void main(String[] args) {
         // Criando uma Pilha Invertida com capacidade para 3 elementos
         PilhaInvertida pilha = new PilhaInvertida(3);
