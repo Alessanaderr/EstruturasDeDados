@@ -1,4 +1,4 @@
-public interface Empilhavel {
+public interface EmpilhavelInvertida {
     // Métodos principais (CRUD)
     void push(Object value);       // C (Create)
     Object peek();                 // R (Read)

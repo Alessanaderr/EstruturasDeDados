@@ -1,5 +1,5 @@
 // MetodosPilha.java
-public interface Empilhavel<T> {
+public interface EmpilhavelGenerica<T> {
     void empilhar(T dado);
     T desempilhar();
     T espiar();
