@@ -1,3 +1,4 @@
+package filaestatica;
 
 public class FilaEstatica implements EnfileiravelEstatica {
 

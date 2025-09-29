@@ -1,3 +1,6 @@
+
+package pilhasestaticas;
+
 public interface EmpilhavelEstatica {
     // main methods
     void push(Object value);       // C (Create)

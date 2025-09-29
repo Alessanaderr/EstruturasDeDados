@@ -1,3 +1,5 @@
+
+package pilhasestaticas;
 public class MainEstatica {
     public static void main(String[] args) {
         // Criar uma pilha com tamanho padrão (5)

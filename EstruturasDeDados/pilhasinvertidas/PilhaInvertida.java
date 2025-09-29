@@ -16,7 +16,7 @@ public class PilhaInvertida implements EmpilhavelInvertida {
     public PilhaInvertida() {
         this(5); 
     }
-@Override
+
     // EMPILHAR DADO (PUSH)
     public void push(Object value) {
         if (!isFull()) {
@@ -26,7 +26,7 @@ public class PilhaInvertida implements EmpilhavelInvertida {
             System.out.println("Pilha lotada!");
         }
     }
-@Override
+
     // ATUALIZAR DADO (UPDATE)
     public void update(Object value) {
         if (!isEmpty()) {
@@ -35,7 +35,7 @@ public class PilhaInvertida implements EmpilhavelInvertida {
             System.err.println("Pilha Vazia!");
         }
     }
-@Override
+
     // DESEMPILHAR DADO (POP)
     public Object pop() {
         Object remove = null;
@@ -47,7 +47,7 @@ public class PilhaInvertida implements EmpilhavelInvertida {
         }
         return remove;
     }
-@Override
+
     // ESPIAR DADO (PEEK)
     public Object peek() {
         if (!isEmpty()) {
@@ -57,17 +57,17 @@ public class PilhaInvertida implements EmpilhavelInvertida {
             return null;
         }
     }
-@Override
+
     // VERIFICAR SE ESTÁ CHEIA
     public boolean isFull() {
         return topo == 0;
     }
-@Override
+
     // VERIFICAR SE ESTÁ VAZIA
     public boolean isEmpty() {
         return topo == dados.length;
     }
-@Override
+
     // MOSTRAR PILHA
     public String printStack() {
         String result = "[";

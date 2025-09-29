@@ -1,3 +1,5 @@
+
+package pilhadupla;
 public class Main {
   public static void main(String[] args) {
     // Criando uma instância da pilha dupla com tamanho 10

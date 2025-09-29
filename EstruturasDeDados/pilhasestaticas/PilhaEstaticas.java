@@ -1,3 +1,6 @@
+package pilhasestaticas;
+
+
 public class PilhaEstaticas {
 
     private int topo; // índice do topo

@@ -1,3 +1,6 @@
+
+
+package listacircular;
 public interface Listavel {
 	
 	//anexa(insere ao final da lista) a lista o novo dado fornecido

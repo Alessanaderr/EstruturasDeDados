@@ -4,7 +4,7 @@ package pilhasinvertidas;
 public class MainInvertida {
     public static void main(String[] args) {
         // Criando uma Pilha Invertida com capacidade para 3 elementos
-        EmpilhavelInvertida pilha = new PilhaInvertida(3);
+        PilhaInvertida pilha = new PilhaInvertida(3);
 
         System.out.println("Pilha inicial: " + pilha.printStack());
         System.out.println("A pilha está vazia? " + pilha.isEmpty());
@@ -16,7 +16,7 @@ public class MainInvertida {
         pilha.push("A");
         pilha.push("B");
         pilha.push("C");
-        
+
         System.out.println("Pilha após empilhar: " + pilha.printStack());
         System.out.println("A pilha está vazia? " + pilha.isEmpty());
         System.out.println("A pilha está cheia? " + pilha.isFull());
@@ -35,14 +35,14 @@ public class MainInvertida {
         System.out.println("Desempilhando elementos...");
         System.out.println("Removido: " + pilha.pop());
         System.out.println("Removido: " + pilha.pop());
-        
+
         System.out.println("Pilha após desempilhar: " + pilha.printStack());
         System.out.println("------------------------------------");
 
         // Desempilhando o último elemento e verificando se está vazia
         System.out.println("Desempilhando o último elemento...");
         System.out.println("Removido: " + pilha.pop());
-        
+
         System.out.println("Pilha após desempilhar tudo: " + pilha.printStack());
         System.out.println("A pilha está vazia? " + pilha.isEmpty());
         System.out.println("------------------------------------");

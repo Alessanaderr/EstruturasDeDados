@@ -1,3 +1,6 @@
+
+package filaestatica;
+
 public class MainFila {
     public static void main(String[] args) {
         // Criação do objeto fila usando a interface Enfileiravel

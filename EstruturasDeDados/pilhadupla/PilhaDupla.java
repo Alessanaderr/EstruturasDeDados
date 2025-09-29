@@ -1,3 +1,6 @@
+
+
+package pilhadupla;
 public class PilhaDupla {
 
     private int top1;          // Índice do topo da Pilha 1 (lado esquerdo)

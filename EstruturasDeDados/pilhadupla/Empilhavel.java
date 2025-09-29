@@ -1,3 +1,6 @@
+
+
+package pilhadupla;
 public interface Empilhavel {
 
     // Métodos da Pilha 1
