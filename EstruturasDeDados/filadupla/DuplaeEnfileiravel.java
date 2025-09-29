@@ -1,3 +1,6 @@
+package filadupla;
+
+
 public interface DuplaeEnfileiravel {
 	// NOVO
 	void enfileirarInicio(Object dado);
@@ -19,7 +22,7 @@ public interface DuplaeEnfileiravel {
 
 	// funciona como o atualizarInicio de Enfileiravel
 	void atualizarInicio(Object dado);
-
+  
 	// funciona como o atualizarFim de Enfileiravel
 	void atualizarFim(Object dado);
 

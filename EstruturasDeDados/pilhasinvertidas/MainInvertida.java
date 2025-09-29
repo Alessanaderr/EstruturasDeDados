@@ -1,3 +1,16 @@
+
+package pilhasinvertidas;
+
+public class MainInvertida {
+    public static void main(String[] args) {
+        PilhaInvertida pilha = new PilhaInvertida(3);
+        pilha.push("A");
+        pilha.push("B");
+        pilha.push("C");
+        System.out.println(pilha.printStack());
+    }
+}
+
 public class MainInvertida {
     public static void main(String[] args) {
         // Criando uma Pilha Invertida com capacidade para 3 elementos

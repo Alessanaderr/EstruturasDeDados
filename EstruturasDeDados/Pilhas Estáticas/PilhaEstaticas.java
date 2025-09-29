@@ -16,8 +16,23 @@ public class PilhaEstaticas {
 
     // Verificar se está cheia
     public boolean isFull() {
-        return topo == dados.length - 1;
+        return topo == dados.length - 1; 
     }
+
+
+// PILHA : 
+
+// Topo ↓ 
+// [3]  ← último que entrou   ←  REMOVE
+
+// [2]
+// [1]  ← primeiro que entrou (vai sair por último)
+// Base ↑
+
+
+
+
+
 
     // Verificar se está vazia
     public boolean isEmpty() {

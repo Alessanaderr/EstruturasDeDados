@@ -1,4 +1,7 @@
-public class PilhaInvertida {
+package pilhasinvertidas;
+
+
+public class PilhaInvertida implements EmpilhavelInvertida {
 
     private int topo; // índice do topo
     private Object[] dados; // array da pilha
