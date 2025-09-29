@@ -3,19 +3,9 @@ package pilhasinvertidas;
 
 public class MainInvertida {
     public static void main(String[] args) {
-        PilhaInvertida pilha = new PilhaInvertida(3);
-        pilha.push("A");
-        pilha.push("B");
-        pilha.push("C");
-        System.out.println(pilha.printStack());
-    }
-}
-
-public class MainInvertida {
-    public static void main(String[] args) {
         // Criando uma Pilha Invertida com capacidade para 3 elementos
-        PilhaInvertida pilha = new PilhaInvertida(3);
-        
+        EmpilhavelInvertida pilha = new PilhaInvertida(3);
+
         System.out.println("Pilha inicial: " + pilha.printStack());
         System.out.println("A pilha está vazia? " + pilha.isEmpty());
         System.out.println("A pilha está cheia? " + pilha.isFull());
