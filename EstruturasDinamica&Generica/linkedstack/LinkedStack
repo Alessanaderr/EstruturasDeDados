@@ -1,137 +1,140 @@
-import java.util.NoSuchElementException;
+
 
 /**
  * Implementação de uma Pilha Dinâmica
  *
  * @param <T> o tipo de elementos armazenados na Pilha
  *
- * @author Carlos Daniel
+ * @author Alessa Nader
  * @version 1.0
  * @since 06/10/2025
  */
 
-public class LinkedStack<T> implements Stackable{
-    /** Aponta para o topo da pilha*/
+import java.util.NoSuchElementException;
+
+public class LinkedStack<T> implements Stackable {
+
+    // Guarda a referência para o último item inserido (topo da pilha)
     private DoubleNode<T> topPointer;
-    /**Indica o número atual de dados da pilha*/
+
+    // Controla quantos elementos estão atualmente armazenados
     private int numberElements;
-    /**Indica o número máximo de elementos que a pilha pode ter*/
+
+    // Define o limite máximo de elementos que a pilha pode ter
     private int maxElements;
 
-
-    public LinkedStack(){
+    // Cria uma pilha com capacidade padrão de 10 posições
+    public LinkedStack() {
         this(10);
     }
 
-    public LinkedStack(int maxElements){
-        this.topPointer = null;
-        this.numberElements = 0;
-        this.maxElements = maxElements;
+    // Cria uma pilha com capacidade definida pelo usuário
+    public LinkedStack(int maxElements) {
+        this.topPointer = null;     // Começa vazia, sem nenhum nó no topo
+        this.numberElements = 0;    // Contagem inicial é zero
+        this.maxElements = maxElements; // Define a capacidade máxima
     }
 
-    /**
-     * Retorna o elemento do topo da pilha
-     *
-     * @return retorna o elemento que está no topo
-     * @throws NoSuchElementException, quando a pilha está vazia
-     */
     @Override
     public T peek() {
-        if(isEmpty()){
+        // Se não há nada na pilha, não há topo para visualizar
+        if (isEmpty()) {
             throw new NoSuchElementException("Stack is empty");
         }
+        // Retorna o conteúdo do topo sem removê-lo
         return topPointer.getData();
     }
 
-    /**
-     * Empilha o elemento do topo da pilha
-     *
-     * @param data, dado a ser empilhado
-     * @throws NoSuchElementException, quando a pilha está cheia
-     */
     @Override
     public void push(T data) {
-        if(isFull()){
+        // Impede adicionar mais elementos se a pilha estiver cheia
+        if (isFull()) {
             throw new NoSuchElementException("Stack is full");
         }
+
+        // Cria um novo nó para guardar o valor informado
         DoubleNode<T> newNode = new DoubleNode<T>();
         newNode.setData(data);
+
+        // Liga o novo nó ao topo atual da pilha (como se colocasse algo por cima)
         newNode.setPrior(topPointer);
-        topPointer.setNext(newNode);
+
+        // Se já havia um topo, faz o topo anterior apontar para o novo nó
+        if (topPointer != null) {
+            topPointer.setNext(newNode);
+        }
+
+        // Atualiza o topo da pilha para ser o novo nó inserido
         topPointer = newNode;
+
+        // Incrementa o número de elementos
         numberElements++;
     }
 
-
-    /**
-     * DEsempilha o elemento do topo da pilha
-     *
-     * @return desempilha o elemento do topo da pilha
-     * @throws NoSuchElementException, quando a pilha está vazia
-     */
     @Override
     public T pop() {
-        if(isEmpty()){
+        // Não é possível remover algo de uma pilha vazia
+        if (isEmpty()) {
             throw new NoSuchElementException("Stack is empty");
         }
+
+        // Guarda o valor do topo antes de remover
         T auxData = topPointer.getData();
-        numberElements--;
+
+        // Move o ponteiro de topo para o elemento abaixo
         topPointer = topPointer.getPrior();
-        topPointer.setNext(null);
+
+        // Se ainda há elementos, desconecta o novo topo do nó removido
+        if (topPointer != null) {
+            topPointer.setNext(null);
+        }
+
+        // Diminui a contagem total
+        numberElements--;
+
+        // Retorna o dado que foi removido
         return auxData;
     }
 
-    /**
-     * Atualizar na pilha
-     *
-     * @param newData, novo dado a ser inserido
-     * @throws NoSuchElementException, quando a pilha está vazia
-     */
     @Override
     public void update(Object newData) {
+        // Substitui o valor do topo removendo o atual e empilhando o novo
         pop();
-        push(newData);
+        push((T) newData);
     }
 
-    /**
-     * Verifica se a Pilha está cheia
-     *
-     * @return retorna True se a pilha estiver cheia
-     */
     @Override
     public boolean isFull() {
+        // A pilha está cheia quando atinge o número máximo permitido
         return numberElements == maxElements;
     }
 
-    /**
-     * Verifica se a Pilha está vazia
-     *
-     * @return retorna True se a pilha estiver vazia
-     */
     @Override
     public boolean isEmpty() {
+        // Está vazia quando não há nenhum elemento guardado
         return numberElements == 0;
     }
 
-    /**
-     * Imprime os elementos da pilha
-     *
-     * @return String com os dados entre colchetes separeados por vírgula
-     */
     @Override
     public String print() {
-
+        // Monta uma string com os dados da pilha (do topo até a base)
         String result = "";
-        DoubleNode<T> auxPointer = topPointer;
-        for(int i = 0; i < numberElements; i++){
-            result += auxPointer.getData();
-            auxPointer = auxPointer.getPrior();
 
-            if(i != numberElements - 1){
+        // Começa a leitura a partir do topo
+        DoubleNode<T> auxPointer = topPointer;
+
+        // Percorre os elementos de cima para baixo
+        for (int i = 0; i < numberElements; i++) {
+            result += auxPointer.getData();   // adiciona o valor do nó atual
+            auxPointer = auxPointer.getPrior(); // desce um nível na pilha
+
+            // Adiciona vírgula entre os valores, exceto no último
+            if (i != numberElements - 1) {
                 result += ", ";
             }
         }
 
+        // Retorna a lista completa formatada com colchetes
         return "[" + result + "]";
     }
 }
