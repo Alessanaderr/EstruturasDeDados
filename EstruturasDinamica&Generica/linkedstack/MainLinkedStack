@@ -1,0 +1,28 @@
+public class Main {
+    public static void main(String[] args) {
+        // Cria um histórico de navegador com capacidade para 5 páginas
+        BrowserHistory browser = new BrowserHistory(5);
+
+        // Visitando páginas
+        browser.visit("https://www.google.com");
+        browser.visit("https://www.github.com");
+        browser.visit("https://www.stackoverflow.com");
+
+        // Mostrando página atual
+        browser.showCurrentPage();
+
+        // Voltando uma página
+        browser.back();
+
+        // Mostrando histórico completo
+        browser.showHistory();
+
+        // Visitando mais páginas
+        browser.visit("https://www.reddit.com");
+        browser.visit("https://www.youtube.com");
+        browser.visit("https://www.wikipedia.org"); // Vai lançar exceção se a pilha estiver cheia
+
+        // Mostrando histórico atualizado
+        browser.showHistory();
+    }
+}
