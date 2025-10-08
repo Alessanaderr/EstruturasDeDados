@@ -1,0 +1,46 @@
+
+public class BrowserHistory {
+
+    private LinkedStack<String> history; // pilha para armazenar URLs
+
+    public BrowserHistory(int maxHistory) {
+        history = new LinkedStack<>(maxHistory);
+    }
+
+    // Visita uma nova página (empilha a URL)
+    public void visit(String url) {
+        history.push(url);
+        System.out.println("🔗 Visitando: " + url);
+    }
+
+    // Volta para a página anterior (desempilha)
+    public void back() {
+        if (history.isEmpty()) {
+            System.out.println("⚠️ Nenhuma página anterior.");
+            return;
+        }
+
+        String lastPage = history.pop();
+        System.out.println("⬅️ Voltando de: " + lastPage);
+
+        if (!history.isEmpty()) {
+            System.out.println("📄 Página atual: " + history.peek());
+        } else {
+            System.out.println("🏠 Nenhuma página no histórico.");
+        }
+    }
+
+    // Mostra o histórico completo
+    public void showHistory() {
+        System.out.println("🕘 Histórico: " + history.print());
+    }
+
+    // Mostra a página atual
+    public void showCurrentPage() {
+        if (history.isEmpty()) {
+            System.out.println("🏠 Nenhuma página aberta.");
+        } else {
+            System.out.println("📄 Página atual: " + history.peek());
+        }
+    }
+}
