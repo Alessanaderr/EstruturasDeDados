@@ -1,0 +1,52 @@
+# Esquema Visual: Estruturas de Dados - Unidade 2
+
+## 5️⃣ Lista Ligada / Encadeada (Linked List)
+(O bloco de construção para as estruturas dinâmicas)
+
+Cada elemento é um "Nó" que guarda o valor e aponta para o próximo.
+
+`Nó: [Valor | Próximo]`
+
+`Head -> [A | *] -> [B | *] -> [C | null] <- Tail`
+
+* **Adicionar:** Insere um nó (no início, meio ou fim) atualizando os ponteiros.
+* **Remover:** Remove um nó atualizando os ponteiros ao redor dele.
+* **Buscar:** Deve percorrer a lista desde o `Head` ($O(n)$).
+
+---
+
+## 6️⃣ Pilha Dinâmica (Linked Stack) - LIFO
+(Ex: `linkedstack`, `Pilha Dinamica Generica`)
+
+É uma Lista Ligada onde todas as operações ocorrem apenas no `Head`, que chamamos de `Topo`.
+
+`Topo -> [C | *] -> [B | *] -> [A | null]`
+
+* **Push (Empilhar):** Adiciona um novo nó como o novo `Topo`.
+    * (Ex: `[D]` é criado, seu "próximo" aponta para `[C]`, e `Topo` agora aponta para `[D]`)
+* **Pop (Desempilhar):** Remove o nó do `Topo`.
+    * (Ex: `Topo` passa a apontar para `[B]`, e `[C]` é removido)
+* **Peek (Espiar):** Vê o valor do `Topo` (neste caso, `C`).
+
+---
+
+## 7️⃣ Fila Dinâmica (Linked Queue) - FIFO
+(A progressão lógica da sua Fila da Unidade 1)
+
+É uma Lista Ligada que usa dois ponteiros: `Início` (Head) e `Fim` (Tail).
+
+`Início -> [A | *] -> [B | *] -> [C | *] <- Fim`
+`(Head)`                             `(Tail)`
+
+* **Enqueue (Enfileirar):** Adiciona um novo nó no `Fim`.
+    * (Ex: O "próximo" de `[C]` aponta para `[D]`, e `Fim` passa a ser `[D]`)
+* **Dequeue (Desenfileirar):** Remove o nó do `Início`.
+    * (Ex: `Início` passa a apontar para `[B]`, e `[A]` é removido)
+* **Peek (Espiar):** Vê o valor do `Início` (neste caso, `A`).
+
+---
+
+### Diferença Chave (Unidade 1 vs. Unidade 2)
+
+* **Unidade 1 (Estática/Array):** Rápido acesso por índice ($O(1)$), mas tamanho fixo ou "caro" para redimensionar (copiar o array).
+* **Unidade 2 (Dinâmica/Ligada):** Tamanho flexível (cresce e diminui nó por nó), mas acesso a elementos do meio é lento ($O(n)$), pois precisa percorrer a lista.
