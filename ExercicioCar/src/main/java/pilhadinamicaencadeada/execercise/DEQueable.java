@@ -1,6 +1,6 @@
 
 
-package estruturasdinamicagenerica.linkedstack.execercise;
+package pilhadinamicaencadeada.execercise;
 
 public interface DEQueable<T> {
     void enfileirarInicio(T dado);

@@ -1,4 +1,4 @@
-package estruturasdinamicagenerica.linkedstack.execercise;
+package pilhadinamicaencadeada.execercise;
 
 import java.util.LinkedList;
 
@@ -13,12 +13,14 @@ public class LinkedDEQue<T> implements DEQueable<T>, Iterable<T> {
 
     @Override
     public void enfileirarInicio(T dado) {
-        if (lista.size() < capacidade) lista.addFirst(dado);
+        if (lista.size() < capacidade)
+            lista.addFirst(dado);
     }
 
     @Override
     public void enfileirarFim(T dado) {
-        if (lista.size() < capacidade) lista.addLast(dado);
+        if (lista.size() < capacidade)
+            lista.addLast(dado);
     }
 
     @Override
@@ -50,4 +52,3 @@ public class LinkedDEQue<T> implements DEQueable<T>, Iterable<T> {
         return lista.iterator();
     }
 }
-

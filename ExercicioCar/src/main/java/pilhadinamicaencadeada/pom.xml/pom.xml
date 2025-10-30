@@ -1,0 +1,11 @@
+<project>
+    <build>
+        <sourceDirectory>exercicios/main/java</sourceDirectory>
+        
+        <testSourceDirectory>exercicios/test/java</testSourceDirectory>
+
+        <plugins>
+            </plugins>
+    </build>
+
+</project>
